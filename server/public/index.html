@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="vendors/angular.js"></script>
+    <script src="scripts/client.js"></script>
+
+    <title>Games</title>
+
 </head>
-<body>
-    
+<body ng-app="GameApp" ng-controller="GameController as vm">
+
+    <h1> {{vm.welcome}}</h1>
+
+    <!-- <h2> {{vm.gameArray}}</h2> -->
+
+    <ul>
+        <li ng-repeat="game in vm.gameArray">
+
+            {{game.name}} </li>
+    </ul>
+
     
 </body>
 </html>

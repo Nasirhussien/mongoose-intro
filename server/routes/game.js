@@ -12,6 +12,25 @@ router.get('/', function(req,res){
       }
 
   })
+
+})
+
+router.post('/', function(req,res){
+    //post request for all games
+    var addGame = new Games(req.body);
+    addGame.save( function(errorMakingDatabaseQuery, data){
+        if(errorMakingDatabaseQuery){
+            console.log('error with game post', errorMakingDatabaseQuery)
+            res.sendStatus(500)
+        } else{ res.sendStatus(201)
+
+
+
+        }
+   
+  
+  })
+
 })
 
 module.exports = router
